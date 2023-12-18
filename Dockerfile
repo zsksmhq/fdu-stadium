@@ -8,11 +8,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY . workspace
-WORKDIR workspace
+WORKDIR /workspace
 
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt && \
+RUN pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple  && \
+    pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple && \
     playwright install chromium
 
-RUN mkdir -p "/data" && \
-    ln -s /etc/crontab docker/data
+RUN mkdir -p "/data" && \ 
+    chmod +x /workspace/scripts_docker/run.sh
+
+CMD ["sh", "/workspace/scripts_docker/run.sh"]

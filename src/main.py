@@ -27,7 +27,7 @@ def parse_args():
     parser.add_argument(
         "-l", "--location",
         type=str,
-        default="枫林综合体育馆排球场",
+        default="江湾体育馆羽毛球场",
         help="服务项目名，请注意不要错字漏字"
     )
     parser.add_argument(
