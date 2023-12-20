@@ -1,0 +1,9 @@
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# m h  dom mon dow   command
+*/5 * * * * crontab /data/crontab
+
+##################-------------- example ---------------##################
+# 55 7 * * 5 python /workspace/src/main.py -s 22220000123 -p password -d 15
+##################--------------------------------------##################
