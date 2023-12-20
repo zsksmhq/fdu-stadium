@@ -79,7 +79,7 @@ class Reserver():
     def run(self) -> None:
         with sync_playwright() as p:
             browser_type = p.chromium
-            browser = browser_type.launch(headless=False)
+            browser = browser_type.launch(headless=True)
             page = browser.new_page()
             page.goto('https://uis.fudan.edu.cn/authserver/login?service=https%3A%2F%2Felife.fudan.edu.cn%2Flogin2.action')
             page.fill('//*[@id="username"]',self._username)
